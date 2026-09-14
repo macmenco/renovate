@@ -64,6 +64,7 @@ export async function extractPackageFile(
   }
 
   const dependencyGroups = def['dependency-groups'];
+  // v8 ignore else -- the schema defaults this to an empty array
   if (dependencyGroups) {
     deps.push(...dependencyGroups);
   }
