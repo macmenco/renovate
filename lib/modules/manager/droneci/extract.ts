@@ -45,6 +45,7 @@ export function extractPackageFile(
               const dep = getDep(currentFrom, true, config.registryAliases);
               dep.depType = 'docker';
               dep.replaceString = replaceString;
+              // v8 ignore else -- `getDep()` always sets the template
               if (dep.autoReplaceStringTemplate) {
                 const d = '@{{newDigest}}';
                 const c = firstLineMatch.groups.leading.length + 1;

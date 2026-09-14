@@ -160,6 +160,7 @@ export function extractCollections(lines: string[]): PackageDependency[] {
           lineNumber += 1;
         }
       } while (lineMatch);
+      // v8 ignore else -- `finalize()` only ever returns true here
       if (finalize(dep)) {
         delete (dep as PackageDependency).managerData;
         deps.push(dep);
